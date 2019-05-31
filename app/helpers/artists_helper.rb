@@ -4,6 +4,7 @@ module ArtistsHelper
   end
 
   def artist_select(song, artist)
+    binding.pry
     if artist
       text_field_tag "song[:artist_id]"
     else
