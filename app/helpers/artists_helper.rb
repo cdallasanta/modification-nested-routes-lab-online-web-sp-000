@@ -3,9 +3,9 @@ module ArtistsHelper
     song.artist.nil? ? link_to("Add Artist", edit_song_path(song)) : link_to(song.artist_name, artist_path(song.artist))
   end
 
-  def artist_select(song, artist)
+  def artist_select(song, params)
     binding.pry
-    if artist
+    if !params[:artist_id]
       text_field_tag "song[:artist_id]"
     else
       select_tag "song[:artist_id]", options_from_collection_for_select(Artist.all, :id, :name)
