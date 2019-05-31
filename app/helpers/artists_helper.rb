@@ -7,7 +7,7 @@ module ArtistsHelper
     if params[:artist_id]
       text_field_tag :artist_id
     else
-      select_tag :artist_id, options_from_collection_for_select(Artist.all, :id, :name)
+      select_tag :song_artist_id, options_from_collection_for_select(Artist.all, :id, :name)
     end
   end
 end
