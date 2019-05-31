@@ -63,6 +63,8 @@ class SongsController < ApplicationController
         elsif !@artist.songs.include?(@song)
           flash[:alert] = "Song not found in artists' songs"
           redirect_to artist_songs_path(@artist)
+        else
+          @nested_editing = true
         end
       end
     end
